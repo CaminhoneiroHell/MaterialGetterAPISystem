@@ -1,0 +1,27 @@
+[
+	{
+		albedoMapUrl: "./U683-230J/albedo-map.jpg"
+		iconUrl: "./U683-230J/icon.jpg"
+		id: "c855d2d8-9460-44af-bed4-c8cc12569110"
+		materialGroup: "PU"
+		materialId: "270eb56e-9d94-4c2e-b11d-1211c5948f84"
+		referenceNumber: "U683-230J"
+		smoothness: 0.95
+		specularity: 0.07
+		surfaceId: "9bed891e-845a-48cc-b7a2-95b2995cd36d",
+		tilingX: 1,
+		tilingY: 1
+		},
+		{
+		albedoMapUrl: "./ZA398-7/albedo-map.jpg"
+		iconUrl: "./ZA398-7/icon.jpg"
+		id: "2740b09f-e81d-4026-bd15-5fd83ec6872a"
+		materialGroup: "Denim"
+		materialId: "55b834ea-0d80-4667-80cc-95deed38214c"
+		referenceNumber: "ZA398-7"
+		specularity: 0.55
+		surfaceId: "707deca3-b0e7-44a1-b70e-6095f86c0c9d"
+		tilingX: 25.43
+		tilingY: 25.43
+	}
+]

@@ -25,8 +25,7 @@ public class TestScript : MonoBehaviour
         public int i;
         public float f;
     }
-
-
+    
     [System.Serializable]
     public struct S
     {
@@ -41,16 +40,16 @@ public class TestScript : MonoBehaviour
 
     private void OnDisable()
     {
-        
-        PlayerPrefs.SetInt("test int", 666);
+        PlayerPrefs.SetInt("test int", 666);   
         PlayerPrefs.SetString("json test", JsonUtility.ToJson(this, true));
         PlayerPrefs.Save();
-
     }
 
     //This method runs whenever a changes are made to the serialized information in the editor
     private void OnValidate()
     {
+
+
     }
 
 }

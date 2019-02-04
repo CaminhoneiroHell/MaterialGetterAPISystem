@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IRayCaster
-{
-    Vector3 CastRayFoward();
+//public interface IRayCaster
+//{
+//    Vector3 CastRayFoward();
 
-    Vector3 CastRayBackward();
+//    Vector3 CastRayBackward();
 
-    Vector3 CastRayUp();
+//    Vector3 CastRayUp();
 
-    Vector3 CastRayDown();
+//    Vector3 CastRayDown();
 
-    Vector3 CastRayRight();
+//    Vector3 CastRayRight();
 
-    Vector3 CastRayLeft();
-}
+//    Vector3 CastRayLeft();
+//}
 
 
-public class RayCaster : MonoBehaviour, IRayCaster
+public class IRayCaster : MonoBehaviour//, IRayCaster
 {
 
     #region variables
@@ -30,20 +30,22 @@ public class RayCaster : MonoBehaviour, IRayCaster
     //float distanceToFloorLeft;
     #endregion
 
-    //void Update()
-    //{
-    //    Execute_RayCasterShooter();
-    //}
-    
-    //public void Execute_RayCasterShooter()
-    //{
-    //    //CastRayFoward();
-    //    //CastRayBackward();
-    //    //CastRayDown();
-    //    //CastRayLeft();
-    //    //CastRayRight();
-    //    //CastRayUp();
-    //}
+    void Update()
+    {
+        Execute_RayCasterShooter();
+    }
+
+    bool v;
+    public void Execute_RayCasterShooter()
+    {
+        //CastRayFoward();
+        //CastRayBackward();
+        //CastRayDown();
+        //CastRayLeft();
+        //CastRayRight();
+        //CastRayUp();
+        ScreenPointToArray();
+    }
 
     #region raycasters
 
@@ -138,6 +140,22 @@ public class RayCaster : MonoBehaviour, IRayCaster
             return hitLeft.point;
         }
         return transform.position + (transform.right * -maxDistance);
+    }
+
+    public Camera camera;
+    public object ScreenPointToArray()
+    {
+        string HitNoneMessage = "Hit nothing";
+        Ray ray;
+        RaycastHit hit;
+        ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            print(hit.collider.name);
+            return hit.collider.gameObject;
+
+        }
+        return HitNoneMessage;
     }
 
     #endregion

@@ -31,7 +31,7 @@ public class SimulatorManager : Singleton<SimulatorManager>
     
     public Events.EventSimState OnSimStateChanged;
     List<AsyncOperation> _loadOperations;
-    private string _currentLvlName = string.Empty;
+    public string _currentLvlName = string.Empty;
     
     SimulatorState _currentSimulatorState = SimulatorState.BOOTING;
 
@@ -45,11 +45,13 @@ public class SimulatorManager : Singleton<SimulatorManager>
     {
         DontDestroyOnLoad(gameObject);
 
+        _currentLvlName = "Boot";
         _loadOperations = new List<AsyncOperation>();
 
         InstantiateSystemPrefabs();
 
         UIManager.Instance.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
+
     }
 
     void OnLoadOperationComplete(AsyncOperation ao)

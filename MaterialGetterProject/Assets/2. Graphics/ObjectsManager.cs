@@ -27,7 +27,6 @@ public class ObjectsManager : MonoBehaviour
         rend = GO.GetComponent<Renderer>();
         rend.material.shader = Shader.Find("Custom/Outline");
         isSelected = true;
-        print("Dentro");
     }
     
     private void Update()
@@ -43,6 +42,5 @@ public class ObjectsManager : MonoBehaviour
         rend.material.shader = Shader.Find("Standard");
         isSelected = false;
         GO = null;
-        print("Fora");
     }
 }

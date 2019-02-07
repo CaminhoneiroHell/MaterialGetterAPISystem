@@ -19,9 +19,6 @@ namespace PlayerController
 
             if (unityService == null)
                 unityService = new UnityService();
-
-            if (soundManager == null)
-                soundManager = new SoundManager();
         }
 
         [Inject]
